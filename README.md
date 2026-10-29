@@ -26,7 +26,7 @@ Everything runs locally in your browser: there's no backend server, and your dat
 ## Install
 
 - **Chrome:** [Chrome Web Store](https://chromewebstore.google.com/detail/decfjofkfofbjanbcbdhhehddlmaemmm)
-- **Firefox:** [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/wealthsimple-credit-card-impor/)
+- **Firefox:** [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/wealthsimple-cc-importer-ynab/)
 - **Manual:** download the zip for your browser from the [latest release](https://github.com/Cretezy/wealthsimple-ynab/releases/latest), unzip it, and load it as an unpacked extension.
 
 ## Usage
