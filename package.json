@@ -1,0 +1,45 @@
+{
+  "name": "wealthsimple-ynab",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Sync Wealthsimple credit card activity into YNAB",
+  "homepage": "https://github.com/Cretezy/wealthsimple-ynab",
+  "bugs": "https://github.com/Cretezy/wealthsimple-ynab/issues",
+  "license": "GPL-3.0-only",
+  "author": "Charles Crete <charles@cretezy.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cretezy/wealthsimple-ynab.git"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip -b firefox",
+    "compile": "tsc --noEmit",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
+    "postinstall": "wxt prepare"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.101.2",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "ynab": "^4.4.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@wxt-dev/module-react": "^1.1.5",
+    "oxfmt": "^0.57.0",
+    "oxlint": "^1.72.0",
+    "typescript": "^5.9.3",
+    "wxt": "^0.20.27"
+  }
+}

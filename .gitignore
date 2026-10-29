@@ -1,0 +1,31 @@
+# Dependencies & build output
+node_modules
+.output
+.wxt
+stats.html
+stats-*.json
+web-ext.config.ts
+
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Env
+.env
+.env.*
+
+# Editors & OS
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.sw?
+
+# AI tooling
+.claude/
+.agents/
+.codex/
+.mcp.json
+CLAUDE.local.md

@@ -1,0 +1,7 @@
+{
+  "plugins": ["typescript", "react", "import", "unicorn"],
+  "rules": {
+    "no-unused-vars": "error",
+    "no-console": "off"
+  }
+}

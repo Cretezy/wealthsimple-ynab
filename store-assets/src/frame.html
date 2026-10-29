@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="shared.css" />
+    <style>
+      .wrap {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding: 0 96px;
+        gap: 72px;
+      }
+      .copy {
+        flex: 1;
+      }
+      .brand {
+        font-size: 22px;
+        margin-bottom: 36px;
+        color: #cbd5e1;
+      }
+      h1 {
+        font-size: 52px;
+        line-height: 1.1;
+        letter-spacing: -1.2px;
+        font-weight: 800;
+      }
+      p {
+        margin-top: 24px;
+        font-size: 21px;
+        line-height: 1.5;
+        color: #94a3b8;
+        max-width: 520px;
+      }
+      .device {
+        flex: none;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow:
+          0 40px 80px rgba(0, 0, 0, 0.45),
+          0 0 0 1px rgba(255, 255, 255, 0.08);
+        background: #f1f5f9;
+      }
+      iframe {
+        display: block;
+        border: 0;
+        width: 340px;
+        transform-origin: 0 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="copy">
+        <div class="brand">
+          <img src="popup/icon/48.png" width="40" height="40" alt="" /><span
+            >Wealthsimple<span class="arrow">&rarr;</span>YNAB</span
+          >
+        </div>
+        <h1 id="title"></h1>
+        <p id="sub"></p>
+      </div>
+      <div class="device" id="device"><iframe id="popup"></iframe></div>
+    </div>
+    <script>
+      const q = new URLSearchParams(location.search);
+      document.getElementById("title").innerHTML = q.get("title");
+      document.getElementById("sub").textContent = q.get("sub");
+      const frame = document.getElementById("popup");
+      const device = document.getElementById("device");
+      const SCALE = Number(q.get("scale") ?? 1.45);
+      frame.src = `popup/popup.html?state=${q.get("state")}`;
+      const t = setInterval(() => {
+        const doc = frame.contentDocument;
+        if (!doc || doc.documentElement.getAttribute("data-ready") !== "1") return;
+        clearInterval(t);
+        const h = doc.querySelector(".popup").scrollHeight;
+        frame.style.height = h + "px";
+        // Fit inside the 800px frame with breathing room
+        const scale = Math.min(SCALE, (window.innerHeight - 80) / h);
+        frame.style.transform = `scale(${scale})`;
+        device.style.width = 340 * scale + "px";
+        device.style.height = h * scale + "px";
+        document.documentElement.setAttribute("data-ready", "1");
+      }, 50);
+    </script>
+  </body>
+</html>

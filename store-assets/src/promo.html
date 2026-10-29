@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="shared.css" />
+    <style>
+      .wrap {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      /* small: 440x280 */
+      body.small .wrap {
+        padding: 0 36px;
+      }
+      body.small .brand {
+        font-size: 27px;
+        gap: 14px;
+      }
+      body.small .brand img {
+        width: 64px;
+        height: 64px;
+      }
+      body.small p {
+        font-size: 16px;
+        margin-top: 18px;
+        line-height: 1.4;
+        color: #94a3b8;
+      }
+      /* marquee: 1400x560 */
+      body.marquee .wrap {
+        padding: 0 96px;
+      }
+      body.marquee .brand {
+        font-size: 50px;
+        gap: 26px;
+        letter-spacing: -1.5px;
+      }
+      body.marquee .brand img {
+        width: 108px;
+        height: 108px;
+      }
+      body.marquee p {
+        font-size: 27px;
+        margin-top: 36px;
+        line-height: 1.4;
+        color: #94a3b8;
+        max-width: 640px;
+      }
+      body.marquee .pills {
+        display: flex;
+        gap: 14px;
+        margin-top: 40px;
+      }
+      .pills {
+        display: none;
+      }
+      .device {
+        display: none;
+      }
+      body.marquee .wrap {
+        padding-right: 0;
+      }
+      body.marquee .device {
+        display: block;
+        position: absolute;
+        right: 96px;
+        top: 64px;
+        width: 425px;
+        height: 560px;
+        border-radius: 18px 18px 0 0;
+        overflow: hidden;
+        box-shadow:
+          0 40px 80px rgba(0, 0, 0, 0.45),
+          0 0 0 1px rgba(255, 255, 255, 0.08);
+        background: #f1f5f9;
+      }
+      .device iframe {
+        border: 0;
+        width: 340px;
+        height: 600px;
+        transform: scale(1.25);
+        transform-origin: 0 0;
+      }
+      .pill {
+        font-size: 20px;
+        padding: 10px 20px;
+        border-radius: 999px;
+        background: rgba(56, 189, 248, 0.12);
+        color: #7dd3fc;
+        border: 1px solid rgba(56, 189, 248, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="device"><iframe id="popup"></iframe></div>
+    <div class="wrap">
+      <div class="brand">
+        <img src="popup/icon/128.png" alt="" /><span
+          >Wealthsimple<span class="arrow">&rarr;</span>YNAB</span
+        >
+      </div>
+      <p>Sync your Wealthsimple credit card transactions into YNAB, right from your browser.</p>
+      <div class="pills">
+        <span class="pill">No CSV exports</span><span class="pill">Runs locally</span
+        ><span class="pill">Safe to re-sync</span>
+      </div>
+    </div>
+    <script>
+      const size = new URLSearchParams(location.search).get("size") ?? "small";
+      document.body.className = size;
+      const ready = () => document.documentElement.setAttribute("data-ready", "1");
+      if (size === "marquee") {
+        const frame = document.getElementById("popup");
+        frame.src = "popup/popup.html?state=dashboard";
+        const t = setInterval(() => {
+          if (frame.contentDocument?.documentElement.getAttribute("data-ready") === "1") {
+            clearInterval(t);
+            ready();
+          }
+        }, 50);
+      } else {
+        ready();
+      }
+    </script>
+  </body>
+</html>
