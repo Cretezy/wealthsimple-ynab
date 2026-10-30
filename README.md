@@ -16,12 +16,12 @@ Everything runs locally in your browser: there's no backend server, and your dat
 
 ## Screenshots
 
-|                                                           |                                                                            |
-| --------------------------------------------------------- | -------------------------------------------------------------------------- |
-| ![Connect to YNAB](store-assets/screenshot-1-connect.png) | ![Choose card, budget and account](store-assets/screenshot-2-settings.png) |
-| **1. Connect** with YNAB OAuth or a personal access token | **2. Choose** your credit card, YNAB budget and account                    |
-| ![Dry-run preview](store-assets/screenshot-3-preview.png) | ![Sync done](store-assets/screenshot-4-sync-done.png)                      |
-| **3. Preview** transactions before they hit your budget   | **4. Sync** and see what was created or updated                            |
+|                                                           |                                                                          |
+| --------------------------------------------------------- | ------------------------------------------------------------------------ |
+| ![Connect to YNAB](store-assets/screenshot-1-connect.png) | ![Choose card, plan and account](store-assets/screenshot-2-settings.png) |
+| **1. Connect** with YNAB OAuth or a personal access token | **2. Choose** your credit card, YNAB plan and account                    |
+| ![Dry-run preview](store-assets/screenshot-3-preview.png) | ![Sync done](store-assets/screenshot-4-sync-done.png)                    |
+| **3. Preview** transactions before they hit your plan     | **4. Sync** and see what was created or updated                          |
 
 ## Install
 
@@ -33,7 +33,7 @@ Everything runs locally in your browser: there's no backend server, and your dat
 
 1. Sign in to [Wealthsimple](https://my.wealthsimple.com) in your browser.
 2. Open the extension popup and connect YNAB, either with **Authorize with YNAB** or with a [personal access token](https://app.ynab.com/settings/developer).
-3. Pick your credit card, YNAB budget, and YNAB account.
+3. Pick your credit card, YNAB plan, and YNAB account.
 4. Click **Sync Now**.
 
 YNAB OAuth tokens expire after 2 hours. When that happens, the popup asks you to sign in again.
@@ -90,7 +90,9 @@ Store screenshots and promo images are in [`store-assets/`](store-assets/).
 
 ## Disclaimer
 
-This project is not affiliated with, endorsed by, or connected to Wealthsimple Technologies Inc. It uses Wealthsimple's private, undocumented API, which may change or break at any time. Use it at your own risk.
+We are not affiliated, associated, or in any way officially connected with Wealthsimple Technologies Inc. or any of its subsidiaries or affiliates. The official Wealthsimple website can be found at <https://www.wealthsimple.com>. The name Wealthsimple, as well as related names, tradenames, marks, trademarks, emblems, and images, are trademarks of their respective owners.
+
+This project uses Wealthsimple's private, undocumented API, which may change or break at any time. Use it at your own risk.
 
 We are not affiliated, associated, or in any way officially connected with YNAB or any of its subsidiaries or affiliates. The official YNAB website can be found at <https://www.ynab.com>. The names YNAB and You Need A Budget, as well as related names, tradenames, marks, trademarks, emblems, and images are registered trademarks of YNAB.
 

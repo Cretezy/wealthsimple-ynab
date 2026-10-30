@@ -6,7 +6,7 @@
   const settings = {
     ynabAccessToken: state === "connect" ? "" : "mock-token",
     ynabBudgetId: "budget-1",
-    ynabBudgetName: "My Budget",
+    ynabBudgetName: "My Plan",
     ynabAccountId: "account-1",
     ynabAccountName: "Wealthsimple Visa",
     wealthsimpleAccountId: "card-1",
@@ -17,7 +17,7 @@
   };
 
   const budgets = [
-    { id: "budget-1", name: "My Budget" },
+    { id: "budget-1", name: "My Plan" },
     { id: "budget-2", name: "Shared Household" },
   ];
   const accounts = [

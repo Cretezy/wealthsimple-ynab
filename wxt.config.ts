@@ -21,7 +21,7 @@ export default defineConfig({
               id: "wealthsimple-ynab@cretezy.com",
               // data_collection_permissions requires Firefox 140+
               strict_min_version: "140.0",
-              // Transactions leave the device (sent to the user's YNAB budget)
+              // Transactions leave the device (sent to the user's YNAB plan)
               data_collection_permissions: {
                 required: ["financialAndPaymentInfo", "authenticationInfo"],
               },

@@ -220,7 +220,7 @@ export function Dashboard({
         <div className="field-row">
           <div className="select-wrap">
             <label className="field-label" htmlFor="ynab-budget">
-              Budget
+              Plan
             </label>
             <PopupSelect
               id="ynab-budget"

@@ -48,11 +48,11 @@ frame connect \
   "Authorize with YNAB OAuth, or paste a personal access token if you prefer." \
   screenshot-1-connect.png
 frame dashboard \
-  'Select your card, budget, and account &mdash; <span class="accent">then sync</span>' \
+  'Select your card, plan, and account &mdash; <span class="accent">then sync</span>' \
   "Your signed-in Wealthsimple session is detected automatically. No exports, no passwords." \
   screenshot-2-settings.png
 frame preview \
-  'Preview transactions <span class="accent">before they hit your budget</span>' \
+  'Preview transactions <span class="accent">before they hit your plan</span>' \
   "Dry-run any date range to check payees and amounts before importing." \
   screenshot-3-preview.png
 frame result \
